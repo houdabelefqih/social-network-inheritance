@@ -9,6 +9,7 @@ def test_user_creation():
     assert user.last_name == 'Doe'
     assert user.email == 'john@doe.com'
 
+
 def test_user_follow():
     user1 = UserFactory()
     user2 = UserFactory()
@@ -16,6 +17,7 @@ def test_user_follow():
 
     assert len(user1.following) == 1
     assert user2 in user1.following
+
 
 def test_add_post():
     user = UserFactory()
@@ -26,6 +28,7 @@ def test_add_post():
     user.add_post(post2)
 
     assert len(user.posts) == 2
+
 
 def test_user_timeline():
     """Should only return posts from users I'm following"""
